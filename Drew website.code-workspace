@@ -1,0 +1,13 @@
+{
+  "folders": [
+    {
+      "name": "Drew website",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/.DS_Store": true
+    }
+  }
+}
