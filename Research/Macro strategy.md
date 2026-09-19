@@ -14,7 +14,7 @@ Related research (same `Research/` tree):
 
 1. **Static hosting**, GitHub Pages first (Cloudflare Pages / Netlify are compatible escape hatches, not parallel builds).
 2. **Vanilla HTML/CSS/JS** — no framework, no required bundler, no CMS.
-3. **One page** with dialogs for About, Contact, and project detail; three skill modes.
+3. **One page** with dialogs for About and project detail; three skill modes; email and Instagram in an always-visible footer.
 4. **Copy is unfinished.** The site must tolerate missing thumbnails, missing demos, and withheld titles.
 5. **Research stays in git** and is not the published website. Implementation (later) lives in a publish folder (`docs/` or `site/`), not mixed into these notes as a second brief.
 
@@ -23,7 +23,7 @@ Related research (same `Research/` tree):
 | When someone later builds… | They read… | They do not… |
 | --- | --- | --- |
 | Deploy / DNS / `CNAME` | Hosting | Invent Netlify-only features for v1 |
-| `index.html` structure | Content and IA + My Details | Invent extra nav (blog, shop, separate socials page) |
+| `index.html` structure | Content and IA + My Details | Invent extra nav (blog, shop, contact page, separate socials page) |
 | CSS layout / breakpoints | Mobile + Stack | Shrink desktop tabs and call it responsive |
 | Dialog and tab JS | Stack (APG, `<dialog>`) | Add a UI library for modals/tabs |
 | Card text | My Details, then IA “public vs hold” | Publish `mixed by ________` or a private pitch |
@@ -37,11 +37,11 @@ Related research (same `Research/` tree):
 
 1. **Content gate (still not code).** Drew (or an editor) marks each Writing/Orchestration title **public / hold**, fills one-line credits, and supplies a shortened About. Mixer blanks stay omitted.
 
-2. **Information skeleton.** One `index.html` with header, three panels, empty-or-thin cards, dialog shells, no visual branding pass. Hash URLs. Verify with JS disabled (all sections still readable).
+2. **Information skeleton.** One `index.html` with header, three panels, footer (email + Instagram), empty-or-thin cards, About + project dialog shells, no visual branding pass. Hash URLs. Verify with JS disabled (all sections still readable; email address remains visible as text even if copy/toast needs JS).
 
 3. **Behavior.** Tab keyboard pattern; `<dialog>` focus/escape; hash sync; one dialog at a time.
 
-4. **Layout CSS.** Desktop grid + mobile segmented control + Music Technology accordions. Sticky header. Touch targets.
+4. **Layout CSS.** Desktop grid + mobile segmented control + Music Technology accordions. Sticky header and sticky/fixed footer. Touch targets.
 
 5. **Publish.** GitHub Pages from the site folder only; `.nojekyll`; relative URLs.
 
@@ -49,7 +49,7 @@ Related research (same `Research/` tree):
 
 7. **Visual design.** Type, color, motion. After the skeleton works, so design is not fighting missing IA.
 
-8. **Optional later.** Custom domain; Cloudflare if bandwidth/previews matter; JSON/Eleventy if card HTML becomes unmaintainable; contact form only if `mailto:` is not enough.
+8. **Optional later.** Custom domain; Cloudflare if bandwidth/previews matter; JSON/Eleventy if card HTML becomes unmaintainable; contact form only if copy-to-clipboard is not enough.
 
 Do not start at step 7. Do not introduce a framework at step 2 because the About text is long.
 
@@ -59,11 +59,11 @@ Do not start at step 7. Do not introduce a framework at step 2 because the About
 
 - Host: **GitHub Pages**, publish folder separate from `Research/`
 - Stack: **HTML/CSS/JS**, `<dialog>` + ARIA tabs, no npm app
-- Chrome: **About** and **Contact** (not “Socials”)
+- Chrome: **About** in the header; **email + Instagram** in the footer (not a Contact page or dialog)
 - Skills: three modes; Music Technology is a **CV**, not cards
 - Mobile: **visible** skill switcher (segmented tabs), not hamburger, not a second site
 - Media: **not** in Git LFS; **video on Wistia** (Alyssa set = one video, site links = chapters)
-- Contact: **mailto + Instagram**, no form
+- Footer contact: **copy email + “Copied” toast**, Instagram link, no form
 - Public writing v1: **The Likely Heroes** and **McCobb Mortality Services**; others only with a public sentence
 - Unknown credits: **omit**, don’t placeholder-underline
 
@@ -93,4 +93,4 @@ Do not start at step 7. Do not introduce a framework at step 2 because the About
 - This strategy names sequence, constraints, and now/later splits.
 - No site files have been added.
 
-Later implementation is done when a visitor on a phone can open Contact, switch skills, open a project dialog, and reach Music Technology groups without a desktop tab bar.
+Later implementation is done when a visitor on a phone can copy the email from the footer (with “Copied” feedback), open Instagram, switch skills, open About or a project dialog, and reach Music Technology groups without a desktop tab bar.

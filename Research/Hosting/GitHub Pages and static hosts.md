@@ -78,7 +78,7 @@ Because the recommended stack is plain files (see `Research/Stack/`), the host i
 
 **What it is.** Git-connected static hosting with a larger “platform” surface ([Git workflows](https://docs.netlify.com/build/git-workflows/overview)). Blank build command + publish directory for vanilla files.
 
-**Distinctive extra:** [Netlify Forms](https://docs.netlify.com/manage/forms/setup) can capture a contact form without a backend (`data-netlify="true"`). Drew’s brief specifies **email + Instagram**, not a form. A `mailto:` link and an Instagram URL meet the spec without locking contact to Netlify.
+**Distinctive extra:** [Netlify Forms](https://docs.netlify.com/manage/forms/setup) can capture a contact form without a backend (`data-netlify="true"`). Drew’s brief specifies **email + Instagram**, not a form. Footer **copy-to-clipboard** for the email plus an Instagram URL meet the spec without locking contact to Netlify.
 
 **Tradeoffs.**
 
@@ -92,7 +92,7 @@ Because the recommended stack is plain files (see `Research/Stack/`), the host i
 | --- | --- | --- |
 | v1 host | **GitHub Pages** | Already on GitHub; vanilla files; listed first in the brief; no extra product |
 | Publish shape | Project site **or** `/docs` on `main` | Keep `Research/` in git without serving it as public pages. Prefer a dedicated publish folder (`docs/` or `site/`) once implementation starts |
-| Contact | `mailto:DrewNicholsMusic@gmail.com` + Instagram | Matches copy; avoids Netlify Forms |
+| Footer (email / Instagram) | Copy `DrewNicholsMusic@gmail.com` on click + “Copied” toast; Instagram link | Always visible in chrome; avoids Netlify Forms and mail clients |
 | Audio/video | Wistia (video) + other embeds for audio | Pages is not a media host; LFS will not play |
 | Custom domain | Later | DNS after the shell works on `*.github.io` |
 | Escape hatch | Same files → Cloudflare Pages | No rewrite if bandwidth or previews become the issue |

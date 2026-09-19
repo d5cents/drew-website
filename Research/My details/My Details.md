@@ -2,9 +2,11 @@ I want to build a website that I'll host on Github Pages or Cloudflare Pages or 
 
 It's a portfolio website for me, a musical theatre writer. I have three skills I’d like to feature individually: Writing, Orchestrating/Producing, Music Technology and Design.
 
-The site should feel all like one page, with pop-ups. The top of the page should have a header with 
+The site should feel all like one page, with pop-ups for About and project details. The top of the page should have a header with
 
-“DREW NICHOLS” on the top left, and “About” “Contact” on the top right. Click on “About” or “Socials/Contact” should open pop-up windows with that information.
+“DREW NICHOLS” on the top left, and **About** on the top right. Clicking **About** opens a pop-up with that information.
+
+Email and Instagram should live in a **footer** that stays visible (not a separate contact page or pop-up). Tapping the email address **copies it to the clipboard** and shows a brief **“Copied”** notification (not a `mailto:` link). Instagram remains a normal link to the profile.
 
 **ABOUT**
 
@@ -16,13 +18,13 @@ _The Likely Heroes,_ his musical with Jessie Kleinman and Ryan Kleinman, has rec
 
 Drew is a proud alum of the Time Step Symposium dance arranging workshop and a member of the BMI Lehman Engel Musical Theatre Writing Advanced Songwriting Workshop.
 
-**SOCIALS/CONTACT**
+**FOOTER (EMAIL / SOCIAL — ALWAYS VISIBLE)**
 
 Instagram: @drewcomposed
 
-Email: DrewNicholsMusic@gmail.com
+Email: DrewNicholsMusic@gmail.com (click/tap → copy + “Copied” toast)
 
-Then just below that, there should be three tabs, which change the content of the page below them: **WRITING. ORCHESTRATION; MUSIC TECHNOLOGY**
+Just below the header, there should be three tabs, which change the content of the page below them: **WRITING. ORCHESTRATION; MUSIC TECHNOLOGY**
 
 When the writing tab is open, we see preview thumbnails for projects along with brief descriptions on cards. Clicking on the card opens up a pop-up with additional information and audio/video demos. Same for the orchestration tab. The Music Technology page is more of a CV list.
 

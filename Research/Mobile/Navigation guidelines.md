@@ -18,7 +18,7 @@ This note is that research. Desktop can keep a tablist. Narrow viewports should 
 - Controls must stay large enough to tap; crowding or a horizontally scrolling tab strip hides destinations (“out of sight, out of mind”)
 - Persistent bars (stay on screen while content scrolls) behave differently from a one-time header that scrolls away
 
-Drew has **three** skill destinations plus **two** header actions (About, Contact). That is five chrome items — at the edge of “visible nav” comfort. The skill trio is the primary content switcher; About/Contact are secondary and already specified as pop-ups.
+Drew has **three** skill destinations plus **About** in the header and **email / Instagram** in an always-visible footer. That is five chrome touchpoints, but only four compete in the header row (name, About, skill switcher). The skill trio is the primary content switcher; About is secondary (pop-up); contact is always one tap away in the footer, not a dialog.
 
 Long labels: **Music Technology** will wrap or truncate in a three-column tab bar on a 320–390px phone. Truncation is unacceptable (information scent dies). Wrapping a tab bar into two lines looks like six controls.
 
@@ -56,14 +56,14 @@ If an accordion opens a very long list, keep the subhead sticky or provide a “
 App-like bar: Writing | Orchestration | Tech, with About elsewhere. NN/g notes bottom bars are persistent and familiar on iOS, but:
 
 - Conflicts with mobile browser chrome
-- About/Contact still need a home
+- About still needs a home in the chrome; contact already lives in the footer
 - This site is a website, not an app with five equal destinations
 
 Revisit only if user testing shows people cannot find the skill switcher after scrolling a long CV.
 
 ### 6. Hamburger for skills (not recommended)
 
-[NN/g: Beyond the hamburger](https://www.nngroup.com/articles/find-navigation-mobile-even-hamburger/): hidden nav is slower; with only three skills, hiding them is unjustified. A hamburger that contains Writing/Orchestration/Tech **plus** About/Contact mixes levels.
+[NN/g: Beyond the hamburger](https://www.nngroup.com/articles/find-navigation-mobile-even-hamburger/): hidden nav is slower; with only three skills, hiding them is unjustified. A hamburger that contains Writing/Orchestration/Tech **plus** About mixes levels; contact does not belong in a menu if the footer is always visible.
 
 ### 7. Homepage as hub (not recommended)
 
@@ -71,20 +71,21 @@ A landing page of three big buttons would violate “feel all like one page” a
 
 ## Header on small screens
 
-Desktop: name left, About + Contact right.
+Desktop: name left, About right; footer with email and Instagram always visible.
 
 Mobile:
 
 - Keep **DREW NICHOLS** as the identity; it can wrap or slightly reduce size, not become a hamburger
-- About and Contact stay **visible text buttons**, not icons-only (scent; also matches the brief)
-- Stack if needed: row 1 name, row 2 About | Contact, row 3 skill switcher
-- Make the header **sticky** so switching skills or opening Contact does not require scrolling to top on a long Music Technology list ([NN/g discoverability](https://www.nngroup.com/articles/find-navigation-mobile-even-hamburger/) — sticky + visible beats hidden)
+- **About** stays a **visible text button**, not icon-only (scent; matches the brief)
+- Stack if needed: row 1 name + About, row 2 skill switcher
+- Make the header **sticky** so switching skills or opening About does not require scrolling to top on a long Music Technology list ([NN/g discoverability](https://www.nngroup.com/articles/find-navigation-mobile-even-hamburger/) — sticky + visible beats hidden)
+- Keep the **footer sticky** (or fixed) so email and Instagram stay reachable while scrolling long CV lists — contact is not behind a dialog
 
 Touch targets: WCAG 2.2 **24×24 CSS px** minimum ([SC 2.5.8](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html)); aim for **44×44** on header and skill controls ([SC 2.5.5](https://www.w3.org/WAI/WCAG22/Understanding/target-size-enhanced.html), [Apple HIG](https://developer.apple.com/design/human-interface-guidelines/accessibility) 44×44 pt default on iOS).
 
 ## Dialogs on mobile
 
-Full-screen or near-full-screen `<dialog>` for About and project details. A small centered “desktop modal” on a phone hides content and fights on-screen keyboards (Contact is only two links, so it can be shorter).
+Full-screen or near-full-screen `<dialog>` for About and project details. A small centered “desktop modal” on a phone hides content. Contact stays in the footer, not in a dialog.
 
 Requirements:
 
@@ -104,18 +105,19 @@ Writing/Orchestration: **single column** cards, whole card tappable (large targe
 | Region | Mobile treatment |
 | --- | --- |
 | Identity | Visible title, not in a menu |
-| About / Contact | Visible buttons → full-screen dialogs |
+| About | Visible button → full-screen dialog |
+| Email / Instagram | Footer: email copies on tap + “Copied” toast; Instagram opens profile |
 | Skills | Visible 3-way segmented control (same tab semantics as desktop) |
 | Writing / Orchestration | One-column cards |
 | Music Technology | Intro + accordions per CV group |
-| Footer | Repeat email/Instagram for people who scroll to the end |
+| Footer | Primary contact chrome; sticky/fixed so links stay visible on long pages |
 
 **Breakpoint:** when three skill labels cannot sit in one row at 16px with 44px min-height and 8px gaps, switch layout (stack header; allow segment labels to wrap). Exact px is a CSS task later; ~600–700px is a typical switch for this chrome.
 
 ## What not to do
 
 - Horizontally scrolling tab strip of three items
-- Icon-only nav for About/Contact
+- Icon-only nav for About or footer contact links
 - Different *information* on mobile (same shows, same CV) — only different *chrome*
 - A separate `mobile.html`
 

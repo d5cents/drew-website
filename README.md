@@ -5,7 +5,7 @@ Musical theatre writer portfolio site (GitHub Pages / Cloudflare Pages / Netlify
 ## Project layout
 
 - `Research/` — site copy, project notes, reference material, and strategy
-  - `Research/My details/` — bio, contact, and project inventory (source of truth for copy)
+  - `Research/My details/` — bio, footer contact links, and project inventory (source of truth for copy)
   - `Research/Hosting/` — GitHub Pages and comparable static hosts
   - `Research/Stack/` — vanilla HTML/CSS/JS (no framework)
   - `Research/Content and IA/` — page map, cards vs CV, incomplete-copy rules

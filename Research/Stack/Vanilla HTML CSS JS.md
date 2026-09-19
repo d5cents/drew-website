@@ -32,7 +32,7 @@ Browser-provided behavior ([WCAG technique H102](https://w3c.github.io/wcag/tech
 
 Still required in author CSS/JS: visible close control, labelled dialog (`aria-labelledby` to the heading), scroll inside long About / project bodies, and **no nested modals**.
 
-About, Contact, and project cards should share **one dialog pattern**, with content swapped or with one dialog per concern. Do not invent a second “lightbox” library.
+About and project cards should share **one dialog pattern**, with content swapped or with one dialog per concern. Email and Instagram belong in a `<footer>` landmark, not a dialog. Do not invent a second “lightbox” library.
 
 ### Skill switcher → tabs on desktop, not fake links
 
@@ -46,7 +46,7 @@ Mobile should **not** squeeze three equal tabs into a narrow header. See `Resear
 
 “Feel all like one page” is a UX instruction, not “never change the URL.” Deep links help booking directors share a show. Recommended later implementation:
 
-- `#about`, `#contact`, `#writing`, `#orchestration`, `#music-technology`
+- `#about`, `#writing`, `#orchestration`, `#music-technology` (footer: copy email via JS; Instagram is a normal `https:` link; no `#contact` route)
 - Optional `#writing/the-likely-heroes` to open a project dialog
 
 `hashchange` is enough; History API is optional. GitHub Pages cannot 301 old paths, so **do not ship multi-file routes in v1** (`/writing.html`) unless Drew later wants crawlable per-show pages.
@@ -56,7 +56,7 @@ Mobile should **not** squeeze three equal tabs into a narrow header. See `Resear
 - **Mobile-first media queries.** The brief already flags mobile as a different IA, not a shrunk desktop.
 - **Custom properties** for type scale, spacing, and a small color set — decided at visual-design time, not now.
 - **No CSS framework.** A reset/normalize of a few dozen lines is enough.
-- Prefer `grid` for the card gallery; `flex` for the header.
+- Prefer `grid` for the card gallery; `flex` for the header and footer.
 - Respect `prefers-reduced-motion` when opening dialogs.
 
 Visual identity (typefaces, color, “theatre poster vs. résumé”) is **not** a stack decision. It is a later design pass. Do not install webfont kits until that pass; system or one licensed/display face is enough.
@@ -68,8 +68,9 @@ v1 script should only:
 1. Open/close dialogs and manage focus
 2. Switch skill panels and update `aria-selected` / `hidden`
 3. Sync hash ↔ UI
-4. Pause or reset Wistia when a dialog closes (Player API or replace embed—test with one dialog)
-5. Orchestration cards: use Wistia [Embed Links](https://docs.wistia.com/docs/embed-links) (`#wistia_<id>?time=…`) so one embed serves all Alyssa chapter entry points
+4. Copy footer email to clipboard (`navigator.clipboard.writeText` with a fallback for older browsers) and show a short **“Copied”** toast; announce via `aria-live="polite"` so screen readers hear confirmation
+5. Pause or reset Wistia when a dialog closes (Player API or replace embed—test with one dialog)
+6. Orchestration cards: use Wistia [Embed Links](https://docs.wistia.com/docs/embed-links) (`#wistia_<id>?time=…`) so one embed serves all Alyssa chapter entry points
 
 It should **not**:
 

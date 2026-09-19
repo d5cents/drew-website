@@ -7,8 +7,9 @@ Source of truth for copy: [`Research/My details/My Details.md`](../My%20details/
 Global:
 
 - One-page feel
-- Header: **DREW NICHOLS** left; **About** and **Contact** right
-- About / Contact open as pop-ups (not new pages)
+- Header: **DREW NICHOLS** left; **About** right
+- About opens as a pop-up (not a new page)
+- Footer: **email** and **Instagram**, always visible (not a contact page or pop-up)
 - Below the header: three modes — **Writing**, **Orchestration**, **Music Technology**
 - Writing and Orchestration: **cards** (thumbnail, short text) → pop-up with more copy and audio/video
 - Music Technology: **CV list**, not cards
@@ -19,19 +20,19 @@ Audience (inferred from the bio, not stated as a persona workshop):
 - Directors, producers, MDs, programmers, and peers looking up a writer/orchestrator/programmer
 - They arrive busy; they want **proof of work** (shows, demos) faster than a long bio
 
-That argues for: name + skill switcher first; About as optional context; Contact always one tap away.
+That argues for: name + skill switcher first; About as optional context; email and Instagram always visible in the footer without an extra tap.
 
 ## Proposed page map (still one HTML document)
 
 ```
 [ Header ]
-  Drew Nichols          About    Contact
+  Drew Nichols          About
 [ Skill switcher ]      Writing | Orchestration | Music Technology
 [ Main panel ]
   Writing ........... card grid
   Orchestration ..... card grid
   Music Technology .. grouped CV
-[ Footer, optional ]    email · Instagram · BMI / Time Step one-liners
+[ Footer — always visible ]    email · Instagram
 ```
 
 Dialogs (overlays, not routes):
@@ -39,16 +40,15 @@ Dialogs (overlays, not routes):
 | Dialog | Opens from | Content |
 | --- | --- | --- |
 | About | Header | Career narrative from My Details (edited down) |
-| Contact | Header | Instagram, email; label as Contact (see naming below) |
 | Project | A writing or orchestration card | Title, collaborators, status, longer blurb, media, links |
 
-No fourth top-level nav item. Socials live inside Contact. Memberships (BMI, Time Step) can sit at the end of About, not in the header.
+Contact is not a dialog or route. Memberships (BMI, Time Step) can sit at the end of About, not in the header.
 
 ## Naming inconsistencies to resolve **now**
 
 These are small and block UI labels:
 
-1. Header says **“Contact”**; the section heading says **“SOCIALS/CONTACT.”** Use **Contact** in the chrome. Put Instagram + email inside. “Socials” is not a second destination.
+1. Brief intro listed **SOCIALS/CONTACT** as a pop-up; use a **footer** instead — show the email address as clickable text that **copies to the clipboard** and shows a **“Copied”** toast (no `mailto:`); link Instagram (`@drewcomposed`) to the profile. No separate Contact page.
 2. Brief intro lists skills as “Orchestrating/Producing” and “Music Technology and Design”; tabs say **ORCHESTRATION** and **MUSIC TECHNOLOGY.** Use the **tab labels** on the site. The longer phrases can appear inside the panel intro sentence.
 3. “Orchestraton” typo in the brief → **Orchestration** everywhere in UI.
 
@@ -128,12 +128,14 @@ The About block is one dense paragraph plus two project updates plus affiliation
 
 Keep the full paragraph in `My Details.md` as the canonical essay. The site gets an **edited About**. Editing is a content task before implementation, not something CSS can fix.
 
-## Contact dialog
+## Footer (email / social)
 
-Keep it short:
+Always visible in the page chrome (sticky or fixed at the bottom of the viewport on long scrolls — implementation detail). Keep it short:
 
-- Email: `DrewNicholsMusic@gmail.com` (use a `mailto:` link)
-- Instagram: [@drewcomposed](https://instagram.com/drewcomposed)
+- Email: `DrewNicholsMusic@gmail.com` — button or link-styled control; click copies the address and shows a **“Copied”** toast (not `mailto:`)
+- Instagram: [@drewcomposed](https://instagram.com/drewcomposed) — normal external link
+
+Toast: short-lived “Copied” message (not a modal); auto-dismiss after ~2s; does not steal focus from the footer. Label the control so it is obvious the email is copyable (e.g. visible address + optional “Copy” hint in `aria-label`).
 
 No contact form in v1 (see Hosting). Optional later: representation / location. Not in the brief.
 
@@ -163,13 +165,13 @@ Do not create a blog or news IA. Nothing in the brief asks for it.
 
 ## Recommendations (IA)
 
-1. One document, three skill panels, two header dialogs, project dialogs from cards.
+1. One document, three skill panels, About dialog from the header, project dialogs from cards, contact in the footer.
 2. Writing tab leads with workshop-ready and current work; do not auto-publish every title in the notes.
 3. Orchestration tab = playable/visible pieces; prose résumé stays in About until there are demos.
 4. Music Technology tab = grouped CV, not cards.
-5. Contact chrome label; omit unknown credits rather than blanks.
+5. Footer contact links; omit unknown credits rather than blanks.
 6. Treat `My Details.md` as inventory + long bio; site copy is a subset with a status per item.
 
 **Decide now:** chrome labels; card schema; which writing titles are public in v1; Music Tech as list not cards.
 
-**Decide later:** final About edit; thumbnail art; demo hosts per project; whether *Invincible* et al. get their own cards; footer contents.
+**Decide later:** final About edit; thumbnail art; demo hosts per project; whether *Invincible* et al. get their own cards; exact footer layout (sticky vs fixed).
