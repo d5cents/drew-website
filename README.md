@@ -10,6 +10,7 @@ Musical theatre writer portfolio site (GitHub Pages / Cloudflare Pages / Netlify
   - `Research/Stack/` — vanilla HTML/CSS/JS (no framework)
   - `Research/Content and IA/` — page map, cards vs CV, incomplete-copy rules
   - `Research/Mobile/` — navigation when desktop tabs do not fit
+  - `Research/Media/` — Wistia video hosting and chapter jumps
   - `Research/Macro strategy.md` — sequencing, constraints, decide-now vs later
 
 This phase is research and planning only. There is no site implementation in this repository yet.

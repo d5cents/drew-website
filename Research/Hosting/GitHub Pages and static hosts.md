@@ -51,7 +51,7 @@ Because the recommended stack is plain files (see `Research/Stack/`), the host i
 - Deploy timeout **10 minutes**
 - Rate limiting possible (`429`)
 
-**Media constraint.** Git LFS **cannot** be used with GitHub Pages ([About Git LFS](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-git-large-file-storage)). Do not store show demos as LFS in this repo expecting them to play on the site. Even without LFS, streaming audio/video from Pages burns the 1 GB / 100 GB budgets and is a poor CDN. Host demos on YouTube, Vimeo, SoundCloud, Bandcamp, or object storage; embed them. Thumbnails and small images can live in the repo.
+**Media constraint.** Git LFS **cannot** be used with GitHub Pages ([About Git LFS](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-git-large-file-storage)). Do not store show demos as LFS in this repo expecting them to play on the site. Even without LFS, streaming audio/video from Pages burns the 1 GB / 100 GB budgets and is a poor CDN. Host demos off-site; embed them. **Video:** Wistia (see [`Research/Media/Wistia video hosting and chapters.md`](../Media/Wistia%20video%20hosting%20and%20chapters.md)). **Audio:** SoundCloud, Bandcamp, or small files as appropriate. Thumbnails and small images can live in the repo.
 
 **No server-side redirects.** Path changes later (`/writing` → `/#writing`) need client-side handling or a host that supports `_redirects`. Keep a stable one-page URL from the start so this barely matters.
 
@@ -93,7 +93,7 @@ Because the recommended stack is plain files (see `Research/Stack/`), the host i
 | v1 host | **GitHub Pages** | Already on GitHub; vanilla files; listed first in the brief; no extra product |
 | Publish shape | Project site **or** `/docs` on `main` | Keep `Research/` in git without serving it as public pages. Prefer a dedicated publish folder (`docs/` or `site/`) once implementation starts |
 | Contact | `mailto:DrewNicholsMusic@gmail.com` + Instagram | Matches copy; avoids Netlify Forms |
-| Audio/video | Embed off-site | Pages is not a media host; LFS will not play |
+| Audio/video | Wistia (video) + other embeds for audio | Pages is not a media host; LFS will not play |
 | Custom domain | Later | DNS after the shell works on `*.github.io` |
 | Escape hatch | Same files → Cloudflare Pages | No rewrite if bandwidth or previews become the issue |
 

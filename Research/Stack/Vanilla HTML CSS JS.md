@@ -10,7 +10,7 @@ Drew’s constraint: **plain HTML/CSS/JS, no framework** unless this repo alread
 | Style | One or few `.css` files. CSS custom properties, flex/grid, media queries | Tailwind-as-build, CSS-in-JS, design-system packages |
 | Behavior | One or few `.js` files, no bundler required | npm app, TypeScript *required*, jQuery |
 | Content | Copy sourced from `Research/My details/`; HTML updated by hand | Headless CMS, JSON fetched at runtime from a backend |
-| Media | `<audio>` / `<video>` or iframe embeds | Self-hosted streaming stack |
+| Media | Wistia async embed for video; `<audio>` or other hosts for audio | Self-hosted streaming stack; one iframe per card |
 
 A **static site generator** (Jekyll, Eleventy, 11ty, Hugo) is still “HTML out,” but it is a second toolchain and GitHub Pages’ Jekyll defaults. It is not justified until copy volume or repeated card markup becomes painful. **Defer.** If includes become painful, Eleventy is the least-surprising later add — not v1.
 
@@ -68,7 +68,8 @@ v1 script should only:
 1. Open/close dialogs and manage focus
 2. Switch skill panels and update `aria-selected` / `hidden`
 3. Sync hash ↔ UI
-4. Maybe pause media when a dialog closes
+4. Pause or reset Wistia when a dialog closes (Player API or replace embed—test with one dialog)
+5. Orchestration cards: use Wistia [Embed Links](https://docs.wistia.com/docs/embed-links) (`#wistia_<id>?time=…`) so one embed serves all Alyssa chapter entry points
 
 It should **not**:
 

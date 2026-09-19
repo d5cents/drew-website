@@ -90,9 +90,11 @@ Also mentioned in About but not in the Writing list: *Invincible*, *Rathskeller*
 
 Song/video credits for Alyssa Payne plus “Higher” (Time Step). These are **tracks**, not full musicals — card chrome should look like recordings (title + artist), not like a Broadway show bible.
 
-Missing: mixer on “Crush”; video URL for the Theatrely Tony piece; audio for the rest.
+**Video (Wistia):** Drew plans to host video on Wistia. The Alyssa-related clips should be **one Wistia video** with **chapters**; the site keeps **one card per track**, but each card jumps to the correct chapter in that single embed (see [`Research/Media/Wistia video hosting and chapters.md`](../Media/Wistia%20video%20hosting%20and%20chapters.md)). “Higher” (Time Step) is likely a **separate** Wistia media unless folded into a longer sampler reel.
 
-**v1:** one card per listed title, short credit line “orchestration / production (with Alyssa Payne)” where true; “Higher” as “dance arrangement, Time Step Symposium.” Add media when URLs exist.
+Missing: mixer on “Crush”; final chapter timestamps after the master cut; Wistia hashed ID once uploaded.
+
+**v1:** one card per listed title, short credit line “orchestration / production (with Alyssa Payne)” where true; “Higher” as “dance arrangement, Time Step Symposium.” Cards link to Wistia chapter times when the master reel exists.
 
 Full-musical orchestration credits currently live only in the About paragraph (*Of Leto*, *The Light Rail*, *Invincible*, *McCobb*, benefits). Either:
 

@@ -27,7 +27,7 @@ Related research (same `Research/` tree):
 | CSS layout / breakpoints | Mobile + Stack | Shrink desktop tabs and call it responsive |
 | Dialog and tab JS | Stack (APG, `<dialog>`) | Add a UI library for modals/tabs |
 | Card text | My Details, then IA “public vs hold” | Publish `mixed by ________` or a private pitch |
-| Audio/video | Hosting (off-site embeds) + WCAG notes in Stack | Commit LFS media for Pages |
+| Audio/video | `Research/Media/` (Wistia + chapters) + WCAG in Stack | Commit video files or LFS for Pages |
 
 `My Details.md` remains the **content inventory**. Research docs remain **decisions**. Site files (future) remain **presentation**. If those three disagree, update them in that order: inventory → decision → markup.
 
@@ -62,7 +62,7 @@ Do not start at step 7. Do not introduce a framework at step 2 because the About
 - Chrome: **About** and **Contact** (not “Socials”)
 - Skills: three modes; Music Technology is a **CV**, not cards
 - Mobile: **visible** skill switcher (segmented tabs), not hamburger, not a second site
-- Media: **not** in Git LFS; embeds off-site
+- Media: **not** in Git LFS; **video on Wistia** (Alyssa set = one video, site links = chapters)
 - Contact: **mailto + Instagram**, no form
 - Public writing v1: **The Likely Heroes** and **McCobb Mortality Services**; others only with a public sentence
 - Unknown credits: **omit**, don’t placeholder-underline
