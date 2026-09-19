@@ -133,3 +133,7 @@ Installation, maintenance, or onsite support:
 Sunset Blvd (Broadway 2017 and 2024), Jesus Christ Superstar Live (NBC), School of Rock (Broadway), Miss Saigon (Broadway), The Phantom of the Opera (Broadway)
 
 The mobile version of the site may need to take a different approach than the tabs, for the sake of ease of navigation. We should research mobile guidelines.
+
+---
+
+Related research (same `Research/` tree, not a second copy of this bio): hosting, stack, content/IA, mobile, and the macro strategy document. Update this file first when credits, titles, or public/hold status change.
